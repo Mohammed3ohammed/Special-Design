@@ -12,10 +12,113 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.container {
+  width: 1170;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+/* Start Setting Box */
+
+.settings-box {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  background-color: #fff;
+  width: 200px;
+  z-index: 1000;
+  min-height: 100vh;
+  transition: 0.3s;
+}
+
+.settings-box.open {
+  left: 0;
+}
+
+.settings-box .toggle-settings {
+  position: absolute;
+  right: -30px;
+  top: 100px;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.settings-box .toggle-settings .fa-gear {
+  width: 30px;
+  padding: 8px 0;
+}
+
+.settings-box .option-box {
+  padding: 10px;
+  text-align: center;
+  background-color: #eee;
+  margin: 10px;
+}
+.settings-box .option-box h4 {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+.settings-box .option-box .colors-list {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 10px 0 0;
+}
+.settings-box .option-box .colors-list li {
+  width: 24px;
+  height: 24px;
+  background-color: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  border: 3px solid #eee;
+}
+
+.settings-box .option-box .colors-list li.active {
+  border-color: #fff;
+}
+
+.settings-box .option-box .colors-list li:first-child {
+  background-color: #ff9800;
+}
+.settings-box .option-box .colors-list li:nth-child(2) {
+  background-color: #e91e63;
+}
+.settings-box .option-box .colors-list li:nth-child(3) {
+  background-color: #009688;
+}
+.settings-box .option-box .colors-list li:nth-child(4) {
+  background-color: #03a9f4;
+}
+.settings-box .option-box .colors-list li:last-child {
+  background-color: #4caf50;
+}
+
+.settings-box .option-box .yes,
+.settings-box .option-box .no {
+  width: 50px;
+  background-color: #009688;
+  color: #fff;
+  margin-top: 10px;
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 10px;
+  font-weight: bold;
+  border-radius: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.settings-box .random-backgrounds span.active {
+  opacity: 1;
+}
+/* End Setting Box */
+
 /* Start Landing Page */
 .landing-page {
   min-height: 100vh;
-  background-image: url("../image/01.jpg.jpg");
+  background-image: url("../image/images\ \(1\).jpg");
   background-size: cover;
   position: relative;
 }
@@ -74,6 +177,7 @@ body {
   z-index: 2;
   color: #fff;
   text-align: center;
+  width: 100%;
 }
 
 .introduction_text h1 {
