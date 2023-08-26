@@ -367,3 +367,15 @@ bulletsSpan.forEach(span => {
 
     });
 });
+
+// Reset Button
+
+document.querySelector(".reset-option").onclick = function () {
+
+    localStorage.removeItem("color_option");
+    localStorage.removeItem("background_option");
+    localStorage.removeItem("bullets_option");
+
+    // Relod Window
+    window.location.reload();
+}
