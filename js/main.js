@@ -76,13 +76,7 @@ colorsLi.forEach(li => {
         // Set Color On Local Storage
         localStorage.setItem("color_option", e.target.dataset.color);
 
-        // Remove Active Class From All Childerns
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-
-            element.classList.remove("active")
-        })
-        // Add Active Class On Self
-        e.target.classList.add("active");
+        handelActive(e);
     });
 });
 
@@ -97,14 +91,7 @@ randomBackEl.forEach(span => {
     // Click On Every Span
     span.addEventListener("click", (e) => {
 
-        //Remove Active Class From All Childerns
-        e.target.parentElement.querySelectorAll(".active").forEach(element => {
-
-            element.classList.remove("active")
-        });
-
-        // Add Active Class On Self
-        e.target.classList.add("active");
+        handelActive(e);
 
         if (e.target.dataset.background === 'yes') {
 
@@ -292,16 +279,40 @@ document.addEventListener("click", function (e) {
 
 const allBullets = document.querySelectorAll(".nav-bullets .bullet");
 
-allBullets.forEach(bullet => {
+// Select All Links
 
-    bullet.addEventListener("click", (e) => {
+const alllinks = document.querySelectorAll(".links a");
 
+function scrollToSomewhere(elements) {
 
-        document.querySelector(e.target.dataset.section).scrollIntoView({
+    elements.forEach(ele => {
 
-            behavior: "smooth"
+        ele.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            document.querySelector(e.target.dataset.section).scrollIntoView({
+
+                behavior: "smooth"
+
+            });
 
         });
-
     });
-});
+
+}
+
+scrollToSomewhere(allBullets);
+
+scrollToSomewhere(alllinks);
+
+// Handel Active Stats
+
+function handelActive(ev) {
+    ev.target.parentElement.querySelectorAll(".active").forEach(element => {
+
+        element.classList.remove("active")
+    });
+
+    // Add Active Class On Self
+    ev.target.classList.add("active");
+}
