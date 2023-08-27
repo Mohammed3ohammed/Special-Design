@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-  width: 1170px;
+  /* width: 1170px; */
   padding-left: 15px;
   padding-right: 15px;
   margin: auto;
@@ -213,13 +213,15 @@ body {
   color: var(--main-color);
 }
 
-.header-area .links {
-  list-style: none;
+.header-area .links-container {
   width: 100%;
   text-align: right;
+}
+
+.header-area .links {
+  list-style: none;
+
   padding-left: 0;
-  padding-right: 20px;
-  font-size: 15px;
 }
 .header-area .links li {
   display: inline-block;
@@ -234,6 +236,26 @@ body {
 .header-area .links li a:hover,
 .header-area .links li a.active {
   color: var(--main-color);
+}
+
+.header-area .toggl-menu {
+  background: none;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: none;
+}
+
+.header-area .toggl-menu:focus {
+  outline: none;
+}
+
+.header-area .toggl-menu span {
+  display: block;
+  background-color: #fff;
+  height: 4px;
+  margin-bottom: 4px;
 }
 
 .introduction-text {
@@ -261,6 +283,16 @@ body {
   font-size: 20px;
   margin: 0;
 }
+
+@media (max-width: 991px) {
+  .header-area .links {
+    display: block;
+  }
+  .header-area .toggl-menu {
+    display: inline-block;
+  }
+}
+
 /* End Landing Page */
 
 /* Start About Us */
@@ -758,3 +790,34 @@ body {
   transition: 0.3s;
 }
 /* End Contact Us */
+
+/* Start Grid System */
+@media (min-width: 576px) {
+  /* Small Device => Landscape Phone */
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Small Device => Tablets */
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Desktops */
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Large Screens */
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* End Grid System */
