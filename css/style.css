@@ -248,7 +248,7 @@ body {
   position: relative;
 }
 
-.header-area .toggl-menu::before {
+.header-area .toggl-menu.menu-active::before {
   content: "";
   border-width: 10px;
   border-style: solid;
