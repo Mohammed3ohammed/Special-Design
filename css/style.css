@@ -929,6 +929,17 @@ body {
 }
 /* End Contact Us */
 
+/* Start Footr  */
+
+.footer {
+  background-color: #333;
+  color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+/* End Footr */
+
 /* Start Grid System */
 @media (min-width: 576px) {
   /* Small Device => Landscape Phone */
